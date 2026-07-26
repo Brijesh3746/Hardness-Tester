@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Professional Brinell Hardness Calculator for Castings. Provides instant metallurgy QA comparison lookup and correction factors conforming to ISO 6506." />
+    
+    <!-- PWA support -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0284c7" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    
+    <title>Brinell Hardness Calculator | Foundry Quality Control</title>
+  </head>
+  <body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Register Service Worker for Offline capability -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('ServiceWorker registered:', reg.scope))
+            .catch(err => console.error('ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
+  </body>
+</html>
